@@ -3,27 +3,47 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E7A9C3D6AAC961E30A410E0 /* Pods_SmartHome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2AA81E147CEDB387A71EAB4 /* Pods_SmartHome.framework */; };
 		ED4FE8F224125BD10083B54C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4FE8F124125BD10083B54C /* AppDelegate.swift */; };
 		ED4FE8F424125BD10083B54C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4FE8F324125BD10083B54C /* SceneDelegate.swift */; };
-		ED4FE8F624125BD10083B54C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4FE8F524125BD10083B54C /* ViewController.swift */; };
-		ED4FE8F924125BD20083B54C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4FE8F724125BD20083B54C /* Main.storyboard */; };
+		ED4FE8F624125BD10083B54C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4FE8F524125BD10083B54C /* LoginViewController.swift */; };
 		ED4FE8FB24125BDA0083B54C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED4FE8FA24125BDA0083B54C /* Assets.xcassets */; };
 		ED4FE8FE24125BDA0083B54C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4FE8FC24125BDA0083B54C /* LaunchScreen.storyboard */; };
+		ED4FE90B24125D170083B54C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4FE90A24125D170083B54C /* RegisterViewController.swift */; };
+		ED4FE90D24125D310083B54C /* RePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4FE90C24125D310083B54C /* RePasswordViewController.swift */; };
+		ED4FE90F24125D500083B54C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4FE90E24125D500083B54C /* MainViewController.swift */; };
+		ED4FE91124125D6A0083B54C /* NewRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4FE91024125D6A0083B54C /* NewRoomViewController.swift */; };
+		ED4FE91324125DA90083B54C /* RoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4FE91224125DA90083B54C /* RoomCell.swift */; };
+		ED4FE91524125DC60083B54C /* ChooseRoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4FE91424125DC60083B54C /* ChooseRoomCell.swift */; };
+		ED4FE91724125DE30083B54C /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4FE91624125DE30083B54C /* Room.swift */; };
+		ED4FE91924125DFA0083B54C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4FE91824125DFA0083B54C /* Extensions.swift */; };
+		ED4FE91B241260B90083B54C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED4FE91A241260B90083B54C /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B62BC758AA8603B272A0196 /* Pods-SmartHome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHome.release.xcconfig"; path = "Target Support Files/Pods-SmartHome/Pods-SmartHome.release.xcconfig"; sourceTree = "<group>"; };
+		A2AA81E147CEDB387A71EAB4 /* Pods_SmartHome.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartHome.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC0F9C39DBE42CACD39D6750 /* Pods-SmartHome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHome.debug.xcconfig"; path = "Target Support Files/Pods-SmartHome/Pods-SmartHome.debug.xcconfig"; sourceTree = "<group>"; };
 		ED4FE8EE24125BD10083B54C /* SmartHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED4FE8F124125BD10083B54C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED4FE8F324125BD10083B54C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ED4FE8F524125BD10083B54C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		ED4FE8F824125BD20083B54C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ED4FE8F524125BD10083B54C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ED4FE8FA24125BDA0083B54C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED4FE8FD24125BDA0083B54C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED4FE8FF24125BDA0083B54C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED4FE90A24125D170083B54C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		ED4FE90C24125D310083B54C /* RePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePasswordViewController.swift; sourceTree = "<group>"; };
+		ED4FE90E24125D500083B54C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		ED4FE91024125D6A0083B54C /* NewRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoomViewController.swift; sourceTree = "<group>"; };
+		ED4FE91224125DA90083B54C /* RoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCell.swift; sourceTree = "<group>"; };
+		ED4FE91424125DC60083B54C /* ChooseRoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRoomCell.swift; sourceTree = "<group>"; };
+		ED4FE91624125DE30083B54C /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		ED4FE91824125DFA0083B54C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		ED4FE91A241260B90083B54C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +51,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E7A9C3D6AAC961E30A410E0 /* Pods_SmartHome.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1ACF6AE2F16C9FC52625FD19 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A2AA81E147CEDB387A71EAB4 /* Pods_SmartHome.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6BA95C50CA89820D2BAA6966 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BC0F9C39DBE42CACD39D6750 /* Pods-SmartHome.debug.xcconfig */,
+				5B62BC758AA8603B272A0196 /* Pods-SmartHome.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		ED4FE8E524125BD10083B54C = {
 			isa = PBXGroup;
 			children = (
 				ED4FE8F024125BD10083B54C /* SmartHome */,
 				ED4FE8EF24125BD10083B54C /* Products */,
+				6BA95C50CA89820D2BAA6966 /* Pods */,
+				1ACF6AE2F16C9FC52625FD19 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +96,63 @@
 		ED4FE8F024125BD10083B54C /* SmartHome */ = {
 			isa = PBXGroup;
 			children = (
+				ED4FE90524125C8D0083B54C /* Helpers */,
+				ED4FE90624125C9C0083B54C /* ViewModel */,
+				ED4FE90724125CA20083B54C /* Model */,
+				ED4FE90824125CA70083B54C /* View */,
+				ED4FE90924125CAB0083B54C /* Controller */,
+				ED4FE8FA24125BDA0083B54C /* Assets.xcassets */,
 				ED4FE8F124125BD10083B54C /* AppDelegate.swift */,
 				ED4FE8F324125BD10083B54C /* SceneDelegate.swift */,
-				ED4FE8F524125BD10083B54C /* ViewController.swift */,
-				ED4FE8F724125BD20083B54C /* Main.storyboard */,
-				ED4FE8FA24125BDA0083B54C /* Assets.xcassets */,
 				ED4FE8FC24125BDA0083B54C /* LaunchScreen.storyboard */,
 				ED4FE8FF24125BDA0083B54C /* Info.plist */,
+				ED4FE91A241260B90083B54C /* GoogleService-Info.plist */,
 			);
 			path = SmartHome;
+			sourceTree = "<group>";
+		};
+		ED4FE90524125C8D0083B54C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				ED4FE91824125DFA0083B54C /* Extensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		ED4FE90624125C9C0083B54C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ED4FE90724125CA20083B54C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ED4FE91624125DE30083B54C /* Room.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ED4FE90824125CA70083B54C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ED4FE91224125DA90083B54C /* RoomCell.swift */,
+				ED4FE91424125DC60083B54C /* ChooseRoomCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ED4FE90924125CAB0083B54C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				ED4FE8F524125BD10083B54C /* LoginViewController.swift */,
+				ED4FE90A24125D170083B54C /* RegisterViewController.swift */,
+				ED4FE90C24125D310083B54C /* RePasswordViewController.swift */,
+				ED4FE90E24125D500083B54C /* MainViewController.swift */,
+				ED4FE91024125D6A0083B54C /* NewRoomViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +162,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED4FE90224125BDA0083B54C /* Build configuration list for PBXNativeTarget "SmartHome" */;
 			buildPhases = (
+				F8C79AD1AB2D07C19D9108AF /* [CP] Check Pods Manifest.lock */,
 				ED4FE8EA24125BD10083B54C /* Sources */,
 				ED4FE8EB24125BD10083B54C /* Frameworks */,
 				ED4FE8EC24125BD10083B54C /* Resources */,
+				BDC11B7B1FF0880999B103C0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,34 +217,76 @@
 			files = (
 				ED4FE8FE24125BDA0083B54C /* LaunchScreen.storyboard in Resources */,
 				ED4FE8FB24125BDA0083B54C /* Assets.xcassets in Resources */,
-				ED4FE8F924125BD20083B54C /* Main.storyboard in Resources */,
+				ED4FE91B241260B90083B54C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BDC11B7B1FF0880999B103C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartHome/Pods-SmartHome-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartHome/Pods-SmartHome-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartHome/Pods-SmartHome-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8C79AD1AB2D07C19D9108AF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmartHome-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ED4FE8EA24125BD10083B54C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED4FE8F624125BD10083B54C /* ViewController.swift in Sources */,
+				ED4FE8F624125BD10083B54C /* LoginViewController.swift in Sources */,
+				ED4FE91524125DC60083B54C /* ChooseRoomCell.swift in Sources */,
 				ED4FE8F224125BD10083B54C /* AppDelegate.swift in Sources */,
+				ED4FE91124125D6A0083B54C /* NewRoomViewController.swift in Sources */,
+				ED4FE91724125DE30083B54C /* Room.swift in Sources */,
+				ED4FE90D24125D310083B54C /* RePasswordViewController.swift in Sources */,
+				ED4FE90F24125D500083B54C /* MainViewController.swift in Sources */,
 				ED4FE8F424125BD10083B54C /* SceneDelegate.swift in Sources */,
+				ED4FE91324125DA90083B54C /* RoomCell.swift in Sources */,
+				ED4FE91924125DFA0083B54C /* Extensions.swift in Sources */,
+				ED4FE90B24125D170083B54C /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		ED4FE8F724125BD20083B54C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ED4FE8F824125BD20083B54C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		ED4FE8FC24125BDA0083B54C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -282,6 +414,7 @@
 		};
 		ED4FE90324125BDA0083B54C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC0F9C39DBE42CACD39D6750 /* Pods-SmartHome.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +433,7 @@
 		};
 		ED4FE90424125BDA0083B54C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B62BC758AA8603B272A0196 /* Pods-SmartHome.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

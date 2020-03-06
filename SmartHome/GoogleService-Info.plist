@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>515826078519-3411jhbunc68np8mcdf079c5j63g35pp.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.515826078519-3411jhbunc68np8mcdf079c5j63g35pp</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBfXnFSViWbNCDYj7KbhwU79sOOqQVOdLI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>515826078519</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>t.SmartHome</string>
+	<key>PROJECT_ID</key>
+	<string>smart-home-565d8</string>
+	<key>STORAGE_BUCKET</key>
+	<string>smart-home-565d8.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:515826078519:ios:126e091d9bf0d5283400b2</string>
+	<key>DATABASE_URL</key>
+	<string>https://smart-home-565d8.firebaseio.com</string>
+</dict>
+</plist>
