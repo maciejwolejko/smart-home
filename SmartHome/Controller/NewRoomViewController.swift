@@ -29,33 +29,39 @@ class NewRoomViewController: UIViewController {
         return rt
     }()
     
-    lazy var doneButton: UIButton = {
-        let db = UIButton()
-        return db
+    lazy var backButton: UIButton = {
+        let button = UIButton()
+        button.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
+        button.setTitle("< Back", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 25)
+        button.setTitleColor(.white, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = UIColor(red: 41/255, green: 40/255, blue: 102/255, alpha: 1)
-        navigationController?.navigationBar.barTintColor = UIColor(red: 41/255, green: 40/255, blue: 102/255, alpha: 1)
-        navigationItem.setHidesBackButton(true, animated: true)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonPressed))
         
         setupObjects()
         
-        print(view.frame.height)
     }
     
     func setupObjects() {
         
-        [tableView].forEach({view.addSubview($0)})
+        [backButton, tableView].forEach({view.addSubview($0)})
         
-        tableView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.trailingAnchor, padding: .init(top: 10, left: 10, bottom: 0, right: 10))
+        backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 10, left: 20, bottom: 0, right: 0))
+        
+        tableView.anchor(top: backButton.bottomAnchor, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.trailingAnchor, padding:
+            .init(top: 10, left: 10, bottom: 0, right: 10))
     }
     
-    @objc func doneButtonPressed() {
-        navigationController?.pushViewController(MainViewController(), animated: true)
+    @objc func backButtonPressed() {
+        navigationController?.pushViewController(TabBarViewController(), animated: true)
     }
+    
 }
 
 extension NewRoomViewController: UITableViewDelegate, UITableViewDataSource {
@@ -72,20 +78,19 @@ extension NewRoomViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 190
+        return tableView.frame.height / 4
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let name = roomNames[indexPath.row]
         let image = roomImages[indexPath.row]
         let ref = Database.database().reference().child("User").child(Auth.auth().currentUser!.uid).childByAutoId()
-        let values = ["name": name, "icon": image, "devicesNumber": ""] as [String : Any]
+        let values = ["name": name, "icon": image, "devicesNumber": "", "id": ref.key] as [String : Any]
         ref.updateChildValues(values)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.navigationController?.pushViewController(MainViewController(), animated: true)
+            self.navigationController?.pushViewController(TabBarViewController(), animated: true)
         }
     }
-    
 }
 
