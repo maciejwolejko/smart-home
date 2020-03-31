@@ -12,4 +12,5 @@ struct Room {
     var icon: String?
     var name: String?
     var numberOfDevices: String?
+    var id: String?
 }
