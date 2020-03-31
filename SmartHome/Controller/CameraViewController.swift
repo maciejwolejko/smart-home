@@ -13,7 +13,6 @@ class CameraViewController: UIViewController {
 
     lazy var userNameButton: UIButton = {
         let bt = UIButton()
-        bt.setTitle("Hi, Maciej", for: .normal)
         bt.setTitleColor(.white, for: .normal)
         bt.titleLabel?.font = .systemFont(ofSize: 25)
         bt.addTarget(self, action: #selector(logoutButtonPressed), for: .touchUpInside)
@@ -36,8 +35,22 @@ class CameraViewController: UIViewController {
         
         setupObjects()
         
+        displayUserName()
+        
     }
 
+    func displayUserName() {
+        Database.database().reference().child("registeredUsers")
+            .queryOrdered(byChild: "uid")
+            .queryEqual(toValue: Auth.auth().currentUser?.uid)
+            .observe(.childAdded) { (snapshot) in
+                if let dictionary = snapshot.value as? [String: Any] {
+                    let name = dictionary["name"] as? String
+                    self.userNameButton.setTitle("Hi, \(name!)", for: .normal)
+                }
+        }
+    }
+        
     func setupObjects() {
         [userNameButton, userButton].forEach({view.addSubview($0)})
         

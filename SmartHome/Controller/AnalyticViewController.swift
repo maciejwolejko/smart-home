@@ -20,7 +20,6 @@ class AnalyticViewController: UIViewController {
     
     lazy var userNameButton: UIButton = {
         let bt = UIButton()
-        bt.setTitle("Hi, Maciej", for: .normal)
         bt.setTitleColor(.white, for: .normal)
         bt.titleLabel?.font = .systemFont(ofSize: 25)
         bt.addTarget(self, action: #selector(logoutButtonPressed), for: .touchUpInside)
@@ -87,8 +86,9 @@ class AnalyticViewController: UIViewController {
         daysCollectionView.selectItem(at: selectedItem as IndexPath, animated: true, scrollPosition: .centeredHorizontally)
         daysCollectionView.scrollToItem(at: selectedItem as IndexPath, at: .centeredVertically, animated: true)
        
-        
         horizontalBarLeftAnchorConstraint?.constant = 111.33
+        
+        displayUserName()
     }
 
     func setupObjects() {
@@ -112,7 +112,18 @@ class AnalyticViewController: UIViewController {
         ])
         
         chartCollectionView.anchor(top: line.bottomAnchor, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.trailingAnchor, padding: .init(top: 0, left: 40, bottom: 0, right: 40))
-        
+    }
+    
+    func displayUserName() {
+        Database.database().reference().child("registeredUsers")
+            .queryOrdered(byChild: "uid")
+            .queryEqual(toValue: Auth.auth().currentUser?.uid)
+            .observe(.childAdded) { (snapshot) in
+                if let dictionary = snapshot.value as? [String: Any] {
+                    let name = dictionary["name"] as? String
+                    self.userNameButton.setTitle("Hi, \(name!)", for: .normal)
+                }
+        }
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

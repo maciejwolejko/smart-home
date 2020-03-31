@@ -13,7 +13,6 @@ class ControlsViewController: UIViewController {
 
     lazy var userNameButton: UIButton = {
         let bt = UIButton()
-        bt.setTitle("Hi, Maciej", for: .normal)
         bt.setTitleColor(.white, for: .normal)
         bt.titleLabel?.font = .systemFont(ofSize: 25)
         bt.addTarget(self, action: #selector(logoutButtonPressed), for: .touchUpInside)
@@ -36,6 +35,8 @@ class ControlsViewController: UIViewController {
         
         setupObjects()
         
+        displayUserName()
+        
     }
 
     func setupObjects() {
@@ -45,6 +46,18 @@ class ControlsViewController: UIViewController {
         
         userButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: nil, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 10, left: 0, bottom: 0, right: 20), size: .init(width: 45, height: 45))
         
+    }
+    
+    func displayUserName() {
+        Database.database().reference().child("registeredUsers")
+            .queryOrdered(byChild: "uid")
+            .queryEqual(toValue: Auth.auth().currentUser?.uid)
+            .observe(.childAdded) { (snapshot) in
+                if let dictionary = snapshot.value as? [String: Any] {
+                    let name = dictionary["name"] as? String
+                    self.userNameButton.setTitle("Hi, \(name!)", for: .normal)
+                }
+        }
     }
     
     @objc func userAccountButtonPressed() {
