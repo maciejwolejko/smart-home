@@ -129,10 +129,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         navigationItem.setHidesBackButton(true, animated: true)
         
         setupObjects()
-        
-        if Auth.auth().currentUser != nil {
-            navigationController?.pushViewController(MainViewController(), animated: true)
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            if Auth.auth().currentUser != nil {
+                self.navigationController?.pushViewController(TabBarViewController(), animated: true)
+            }
         }
+
     }
     
     // MARK : - ButtonPressed Methods
@@ -149,7 +151,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     alert.addAction(UIAlertAction(title: "Repeat", style: .default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                 } else {
-                    self.navigationController?.pushViewController(MainViewController(), animated: true)
+                    self.navigationController?.pushViewController(TabBarViewController(), animated: true)
                     self.emailTextField.text = ""
                     self.passwordTextField.text = ""
                 }
