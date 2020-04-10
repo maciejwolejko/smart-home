@@ -16,16 +16,16 @@ class MainViewController: UIViewController {
     var rooms: [Room] = []
     let screen = UIScreen.main.bounds
     
-    lazy var userNameButton: UIButton = {
-        let bt = UIButton()
-        bt.setTitleColor(.white, for: .normal)
-        bt.titleLabel?.font = .systemFont(ofSize: 25)
-        bt.addTarget(self, action: #selector(logoutButtonPressed), for: .touchUpInside)
-        bt.translatesAutoresizingMaskIntoConstraints = false
-        return bt
+    private lazy var userNameButton: UIButton = {
+        let button = UIButton()
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 25)
+        button.addTarget(self, action: #selector(logoutButtonPressed), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }()
     
-    lazy var userButton: UIButton = {
+    private lazy var userButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "user")?.withRenderingMode(.alwaysOriginal), for: .normal)
         button.addTarget(self, action: #selector(userAccountButtonPressed), for: .touchUpInside)
@@ -33,25 +33,25 @@ class MainViewController: UIViewController {
         return button
     }()
     
-    lazy var modeLabel: UILabel = {
-        let ml = UILabel()
-        ml.text = "Mode"
-        ml.textColor = .white
-        ml.font = .systemFont(ofSize: 13)
-        ml.translatesAutoresizingMaskIntoConstraints = false
-        return ml
+    private lazy var modeLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Mode"
+        label.textColor = .white
+        label.font = .systemFont(ofSize: 13)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
-    lazy var modeStackView: UIStackView = {
-        let modes = UIStackView(arrangedSubviews: [winterModeButton, springModeButton, summerModeButton, autumnModeButton])
-        modes.axis = .horizontal
-        modes.distribution = .fillEqually
-        modes.spacing = CGFloat(13)
-        modes.translatesAutoresizingMaskIntoConstraints = false
-        return modes
+    private lazy var modeStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [winterModeButton, springModeButton, summerModeButton, autumnModeButton])
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
+        stackView.spacing = CGFloat(13)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
     }()
     
-    lazy var winterModeButton: UIButton = {
+    private lazy var winterModeButton: UIButton = {
         let button = UIButton()
         button.setTitle("Winter", for: .normal)
         button.addTarget(self, action: #selector(winterModeButtonPressed), for: .touchUpInside)
@@ -59,7 +59,7 @@ class MainViewController: UIViewController {
         return button
     }()
     
-    lazy var springModeButton: UIButton = {
+    private lazy var springModeButton: UIButton = {
         let button = UIButton()
         button.setTitle("Spring", for: .normal)
         button.addTarget(self, action: #selector(springModeButtonPressed), for: .touchUpInside)
@@ -67,7 +67,7 @@ class MainViewController: UIViewController {
         return button
     }()
 
-    lazy var summerModeButton: UIButton = {
+    private lazy var summerModeButton: UIButton = {
         let button = UIButton()
         button.setTitle("Summer", for: .normal)
         button.addTarget(self, action: #selector(summerModeButtonPressed), for: .touchUpInside)
@@ -76,7 +76,7 @@ class MainViewController: UIViewController {
         
     }()
     
-    lazy var autumnModeButton: UIButton = {
+    private lazy var autumnModeButton: UIButton = {
         let button = UIButton()
         button.setTitle("Autumn", for: .normal)
         button.addTarget(self, action: #selector(autumnModeButtonPressed), for: .touchUpInside)
@@ -84,32 +84,32 @@ class MainViewController: UIViewController {
         return button
     }()
 
-    lazy var roomLabel: UILabel = {
-        let rl = UILabel()
-        rl.text = "Room"
-        rl.textColor = .white
-        rl.font = .systemFont(ofSize: 13)
-        rl.translatesAutoresizingMaskIntoConstraints = false
-        return rl
+    private lazy var roomLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Room"
+        label.textColor = .white
+        label.font = .systemFont(ofSize: 13)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
-    lazy var roomCollectionView: UICollectionView = {
+    private lazy var roomCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        let rc = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        rc.backgroundColor = UIColor(red: 41/255, green: 40/255, blue: 102/255, alpha: 1)
-        rc.register(RoomCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        rc.delegate = self
-        rc.dataSource = self
-        rc.translatesAutoresizingMaskIntoConstraints = false
-        return rc
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = UIColor(red: 41/255, green: 40/255, blue: 102/255, alpha: 1)
+        collectionView.register(RoomCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        return collectionView
     }()
     
-    lazy var addNewRoomButton: UIButton = {
-        let ab = UIButton()
-        ab.addTarget(self, action: #selector(addNewRoomButtonPressed), for: .touchUpInside)
-        ab.setImage(UIImage(named: "addc")?.withRenderingMode(.alwaysOriginal), for: .normal)
-        ab.translatesAutoresizingMaskIntoConstraints = false
-        return ab
+    private lazy var addNewRoomButton: UIButton = {
+        let button = UIButton()
+        button.addTarget(self, action: #selector(addNewRoomButtonPressed), for: .touchUpInside)
+        button.setImage(UIImage(named: "addc")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }()
     
     override func viewDidLoad() {
@@ -194,7 +194,7 @@ class MainViewController: UIViewController {
     }
     
     func setupObjects() {
-        [userNameButton, userButton, modeLabel, modeStackView, roomLabel, roomCollectionView, addNewRoomButton].forEach({view.addSubview($0)})
+        [userNameButton, userButton, modeLabel, modeStackView, roomLabel, roomCollectionView, addNewRoomButton].forEach{view.addSubview($0)}
         
         userNameButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 10, left: 20, bottom: 0, right: 0))
         
@@ -232,8 +232,8 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
-        let cell = roomCollectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! RoomCell
+        
+        guard let cell = roomCollectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? RoomCell else { return UICollectionViewCell() }
         
         let room = rooms[indexPath.row]
         cell.room = room
@@ -248,8 +248,10 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let room = self.rooms[indexPath.row]
         let vc = RoomViewController()
-        vc.roomNameLabel.text = "\(room.name!)"
-        vc.roomId = room.id!
+        guard let name = room.name else { return }
+        guard let id = room.id else { return }
+        vc.roomNameLabel.text = "\(name)"
+        vc.roomId = id
         navigationController?.pushViewController(vc, animated: true)
     }
 }
