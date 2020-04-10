@@ -24,80 +24,80 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }()
     
     private lazy var logoImage: UIImageView = {
-        let li = UIImageView()
-        li.contentMode = .scaleAspectFit
-        li.image = UIImage(named: "home")?.withRenderingMode(.alwaysTemplate)
-        li.tintColor = UIColor(red: 27/255, green: 183/255, blue: 233/255, alpha: 1)
-        li.translatesAutoresizingMaskIntoConstraints = false
-        return li
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(named: "home")?.withRenderingMode(.alwaysTemplate)
+        imageView.tintColor = UIColor(red: 27/255, green: 183/255, blue: 233/255, alpha: 1)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
     }()
     
     private lazy var nameLabel: UILabel = {
-        let nl = UILabel()
-        nl.text = "Smart Home"
-        nl.font = .systemFont(ofSize: screen.height * 0.04)
-        nl.textColor = UIColor(red: 27/255, green: 183/255, blue: 233/255, alpha: 1)
-        nl.translatesAutoresizingMaskIntoConstraints = false
-        return nl
+        let label = UILabel()
+        label.text = "Smart Home"
+        label.font = .systemFont(ofSize: screen.height * 0.04)
+        label.textColor = UIColor(red: 27/255, green: 183/255, blue: 233/255, alpha: 1)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     private lazy var subNameLabel: UILabel = {
-        let sn = UILabel()
-        sn.text = "by mwsoftware"
-        sn.textAlignment = .center
-        sn.font = .systemFont(ofSize: screen.height * 0.02)
-        sn.textColor = UIColor(red: 27/255, green: 183/255, blue: 233/255, alpha: 1)
-        sn.translatesAutoresizingMaskIntoConstraints = false
-        return sn
+        let label = UILabel()
+        label.text = "by mwsoftware"
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: screen.height * 0.02)
+        label.textColor = UIColor(red: 27/255, green: 183/255, blue: 233/255, alpha: 1)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     private lazy var emailLabel: UILabel = {
-        let el = UILabel()
-        el.text = "Email"
-        el.textAlignment = .left
-        el.font = .systemFont(ofSize: 13)
-        el.textColor = .white
-        el.translatesAutoresizingMaskIntoConstraints = false
-        return el
+        let label = UILabel()
+        label.text = "Email"
+        label.textAlignment = .left
+        label.font = .systemFont(ofSize: 13)
+        label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     private lazy var emailTextField: UITextField = {
-        let et = UITextField()
-        et.layer.borderWidth = 1
-        et.layer.cornerRadius = 10
-        et.layer.borderColor = UIColor(red: 27/255, green: 183/255, blue: 233/255, alpha: 1).cgColor
-        et.layer.backgroundColor = UIColor(red: 53/255, green: 42/255, blue: 129/255, alpha: 1).cgColor
-        et.attributedPlaceholder = .init(string: "jan.kowalski@gmail.com", attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 27/255, green: 183/255, blue: 233/255, alpha: 1)])
-        et.textAlignment = .center
-        et.textColor = UIColor(red: 27/255, green: 183/255, blue: 233/255, alpha: 1)
-        et.delegate = self
-        et.translatesAutoresizingMaskIntoConstraints = false
-        return et
+        let textField = UITextField()
+        textField.layer.borderWidth = 1
+        textField.layer.cornerRadius = 10
+        textField.layer.borderColor = UIColor(red: 27/255, green: 183/255, blue: 233/255, alpha: 1).cgColor
+        textField.layer.backgroundColor = UIColor(red: 53/255, green: 42/255, blue: 129/255, alpha: 1).cgColor
+        textField.attributedPlaceholder = .init(string: "jan.kowalski@gmail.com", attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 27/255, green: 183/255, blue: 233/255, alpha: 1)])
+        textField.textAlignment = .center
+        textField.textColor = UIColor(red: 27/255, green: 183/255, blue: 233/255, alpha: 1)
+        textField.delegate = self
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
     }()
     
     private lazy var passwordLabel: UILabel = {
-        let pl = UILabel()
-        pl.text = "Password"
-        pl.textAlignment = .left
-        pl.font = .systemFont(ofSize: 13)
-        pl.textColor = .white
-        pl.translatesAutoresizingMaskIntoConstraints = false
-        return pl
+        let label = UILabel()
+        label.text = "Password"
+        label.textAlignment = .left
+        label.font = .systemFont(ofSize: 13)
+        label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     private lazy var passwordTextField: UITextField = {
-        let pt = UITextField()
-        pt.layer.borderWidth = 1
-        pt.layer.cornerRadius = 10
-        pt.layer.borderColor = UIColor(red: 27/255, green: 183/255, blue: 233/255, alpha: 1).cgColor
-        pt.layer.backgroundColor = UIColor(red: 53/255, green: 42/255, blue: 129/255, alpha: 1).cgColor
-        pt.attributedPlaceholder = .init(string: "****************", attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 27/255, green: 183/255, blue: 233/255, alpha: 1)])
-        pt.textAlignment = .center
-        pt.textColor = UIColor(red: 27/255, green: 183/255, blue: 233/255, alpha: 1)
-        pt.delegate = self
-        pt.isSecureTextEntry = true
-        pt.translatesAutoresizingMaskIntoConstraints = false
-        return pt
+        let textField = UITextField()
+        textField.layer.borderWidth = 1
+        textField.layer.cornerRadius = 10
+        textField.layer.borderColor = UIColor(red: 27/255, green: 183/255, blue: 233/255, alpha: 1).cgColor
+        textField.layer.backgroundColor = UIColor(red: 53/255, green: 42/255, blue: 129/255, alpha: 1).cgColor
+        textField.attributedPlaceholder = .init(string: "****************", attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 27/255, green: 183/255, blue: 233/255, alpha: 1)])
+        textField.textAlignment = .center
+        textField.textColor = UIColor(red: 27/255, green: 183/255, blue: 233/255, alpha: 1)
+        textField.delegate = self
+        textField.isSecureTextEntry = true
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
     }()
     
     private lazy var loginButton: UIButton = {
