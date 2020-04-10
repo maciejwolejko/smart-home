@@ -2,8 +2,8 @@
 //  NewRoomViewController.swift
 //  SmartHome
 //
-//  Created by Maciej Wołejko on 06/03/2020.
-//  Copyright © 2020 Maciej Wołejko. All rights reserved.
+//  Created by MW on 06/03/2020.
+//  Copyright © 2020 MW. All rights reserved.
 //
 
 import UIKit
@@ -17,19 +17,19 @@ class NewRoomViewController: UIViewController {
     let roomImages = ["livingroom", "bathroom", "bedroom", "kitchen"]
     let screen = UIScreen.main.bounds
     
-    lazy var tableView: UITableView = {
-        let rt = UITableView()
-        rt.separatorColor = UIColor(red: 27/255, green: 183/255, blue: 233/255, alpha: 1)
-        rt.separatorInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-        rt.delegate = self
-        rt.dataSource = self
-        rt.backgroundColor = UIColor(red: 41/255, green: 40/255, blue: 102/255, alpha: 1)
-        rt.register(ChooseRoomCell.self, forCellReuseIdentifier: reuseIdentifier)
-        rt.translatesAutoresizingMaskIntoConstraints = false
-        return rt
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.separatorColor = UIColor(red: 27/255, green: 183/255, blue: 233/255, alpha: 1)
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.backgroundColor = UIColor(red: 41/255, green: 40/255, blue: 102/255, alpha: 1)
+        tableView.register(ChooseRoomCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
     }()
     
-    lazy var backButton: UIButton = {
+    private lazy var backButton: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
         button.setTitle("< Back", for: .normal)
@@ -43,14 +43,13 @@ class NewRoomViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor(red: 41/255, green: 40/255, blue: 102/255, alpha: 1)
-        
         setupObjects()
         
     }
     
     func setupObjects() {
         
-        [backButton, tableView].forEach({view.addSubview($0)})
+        [backButton, tableView].forEach{view.addSubview($0)}
         
         backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 10, left: 20, bottom: 0, right: 0))
         
@@ -64,7 +63,7 @@ class NewRoomViewController: UIViewController {
     
 }
 
-extension NewRoomViewController: UITableViewDelegate, UITableViewDataSource {
+extension NewRoomViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return roomNames.count
     }
@@ -76,7 +75,9 @@ extension NewRoomViewController: UITableViewDelegate, UITableViewDataSource {
         cell.imageView!.image = UIImage(named: roomImages[indexPath.row])?.withRenderingMode(.alwaysTemplate)
         return cell
     }
-    
+}
+
+extension NewRoomViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tableView.frame.height / 4
     }
