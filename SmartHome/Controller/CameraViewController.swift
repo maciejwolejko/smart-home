@@ -2,8 +2,8 @@
 //  CameraViewController.swift
 //  SmartHome
 //
-//  Created by user164182 on 3/26/20.
-//  Copyright © 2020 Maciej Wołejko. All rights reserved.
+//  Created by MW on 3/26/20.
+//  Copyright © 2020 MW. All rights reserved.
 //
 
 import UIKit
@@ -11,7 +11,7 @@ import Firebase
 
 class CameraViewController: UIViewController {
 
-    lazy var userNameButton: UIButton = {
+    private lazy var userNameButton: UIButton = {
         let bt = UIButton()
         bt.setTitleColor(.white, for: .normal)
         bt.titleLabel?.font = .systemFont(ofSize: 25)
@@ -20,7 +20,7 @@ class CameraViewController: UIViewController {
         return bt
     }()
     
-    lazy var userButton: UIButton = {
+    private lazy var userButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "user")?.withRenderingMode(.alwaysOriginal), for: .normal)
         button.addTarget(self, action: #selector(userAccountButtonPressed), for: .touchUpInside)
@@ -52,7 +52,7 @@ class CameraViewController: UIViewController {
     }
         
     func setupObjects() {
-        [userNameButton, userButton].forEach({view.addSubview($0)})
+        [userNameButton, userButton].forEach{view.addSubview($0)}
         
         userNameButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 10, left: 20, bottom: 0, right: 0))
         
