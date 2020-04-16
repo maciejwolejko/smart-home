@@ -160,7 +160,7 @@ class AnalyticViewController: UIViewController {
     }
 }
 
-extension AnalyticViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+extension AnalyticViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
@@ -169,19 +169,25 @@ extension AnalyticViewController: UICollectionViewDelegateFlowLayout, UICollecti
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if collectionView == daysCollectionView {
-            let cell = daysCollectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! AnalyticsCell
+            
+            guard let cell = daysCollectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? AnalyticsCell else { return UICollectionViewCell() }
             
             cell.dayLabel.text = days[indexPath.row]
-            
             return cell
+            
         } else {
-            let cell = chartCollectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ChartCell
+            
+            guard let cell = chartCollectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? ChartCell else { return UICollectionViewCell() }
             
             cell.chartLabel.text = charts[indexPath.row]
-            
             return cell
+            
         }
     }
+    
+}
+
+extension AnalyticViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         scrollToMenuIndex(menuIndex: indexPath.item)
