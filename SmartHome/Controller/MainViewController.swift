@@ -236,8 +236,9 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         guard let cell = roomCollectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? RoomCell else { return UICollectionViewCell() }
         
         let room = rooms[indexPath.row]
-        cell.room = room
-        
+        cell.nameRoom.text = room.name
+        cell.deviceNumber.text = "No device added!"
+        cell.iconRoom.image = UIImage(named: room.icon!)?.withRenderingMode(.alwaysTemplate)
         return cell
     }
 
