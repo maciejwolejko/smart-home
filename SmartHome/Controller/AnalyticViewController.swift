@@ -2,8 +2,8 @@
 //  AnalyticViewController.swift
 //  SmartHome
 //
-//  Created by user164182 on 3/26/20.
-//  Copyright © 2020 Maciej Wołejko. All rights reserved.
+//  Created by MW on 3/26/20.
+//  Copyright © 2020 MW. All rights reserved.
 //
 
 import UIKit
@@ -18,7 +18,7 @@ class AnalyticViewController: UIViewController {
     let charts = ["Yesterday's Chart", "Today's Chart", "Prediction's Chart"]
     var horizontalBarLeftAnchorConstraint: NSLayoutConstraint?
     
-    lazy var userNameButton: UIButton = {
+    private lazy var userNameButton: UIButton = {
         let bt = UIButton()
         bt.setTitleColor(.white, for: .normal)
         bt.titleLabel?.font = .systemFont(ofSize: 25)
@@ -27,7 +27,7 @@ class AnalyticViewController: UIViewController {
         return bt
     }()
     
-    lazy var userButton: UIButton = {
+    private lazy var userButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "user")?.withRenderingMode(.alwaysOriginal), for: .normal)
         button.addTarget(self, action: #selector(userAccountButtonPressed), for: .touchUpInside)
@@ -35,7 +35,7 @@ class AnalyticViewController: UIViewController {
         return button
     }()
     
-    lazy var daysCollectionView: UICollectionView = {
+    private lazy var daysCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -47,7 +47,7 @@ class AnalyticViewController: UIViewController {
         return collectionView
     }()
     
-    lazy var chartCollectionView: UICollectionView = {
+    private lazy var chartCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -60,14 +60,14 @@ class AnalyticViewController: UIViewController {
         return collectionView
     }()
     
-    lazy var line: UIView = {
+    private lazy var line: UIView = {
         let line = UIView(frame: .zero)
         line.backgroundColor = .gray
         line.translatesAutoresizingMaskIntoConstraints = false
         return line
     }()
     
-    lazy var horizontalBar: UIView = {
+    private lazy var horizontalBar: UIView = {
         let line = UIView(frame: .zero)
         line.backgroundColor = UIColor(red: 27/255, green: 183/255, blue: 233/255, alpha: 1)
         line.translatesAutoresizingMaskIntoConstraints = false
@@ -79,20 +79,22 @@ class AnalyticViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor(red: 41/255, green: 40/255, blue: 102/255, alpha: 1)
-        
         setupObjects()
+        selectedItem()
+        horizontalBarLeftAnchorConstraint?.constant = 111.33
+        displayUserName()
         
+    }
+    
+    func selectedItem() {
         let selectedItem = NSIndexPath(item: 1, section: 0)
         daysCollectionView.selectItem(at: selectedItem as IndexPath, animated: true, scrollPosition: .centeredHorizontally)
         daysCollectionView.scrollToItem(at: selectedItem as IndexPath, at: .centeredVertically, animated: true)
-       
-        horizontalBarLeftAnchorConstraint?.constant = 111.33
         
-        displayUserName()
     }
 
     func setupObjects() {
-        [userNameButton, userButton, daysCollectionView, line, horizontalBar, chartCollectionView].forEach({view.addSubview($0)})
+        [userNameButton, userButton, daysCollectionView, line, horizontalBar, chartCollectionView].forEach{view.addSubview($0)}
         
         userNameButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 10, left: 20, bottom: 0, right: 0))
         
