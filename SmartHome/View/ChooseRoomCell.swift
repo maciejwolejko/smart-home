@@ -2,8 +2,8 @@
 //  ChooseRoomCell.swift
 //  SmartHome
 //
-//  Created by Maciej Wołejko on 06/03/2020.
-//  Copyright © 2020 Maciej Wołejko. All rights reserved.
+//  Created by MW on 06/03/2020.
+//  Copyright © 2020 MW. All rights reserved.
 //
 
 import UIKit

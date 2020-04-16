@@ -2,8 +2,8 @@
 //  AnalyticsCell.swift
 //  SmartHome
 //
-//  Created by user164182 on 3/26/20.
-//  Copyright © 2020 Maciej Wołejko. All rights reserved.
+//  Created by MW on 3/26/20.
+//  Copyright © 2020 MW. All rights reserved.
 //
 
 import UIKit
@@ -37,7 +37,7 @@ class AnalyticsCell: UICollectionViewCell {
     }
     
     func setupObjects() {
-        [dayLabel].forEach({addSubview($0)})
+        [dayLabel].forEach{addSubview($0)}
         
         NSLayoutConstraint.activate([
             dayLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),

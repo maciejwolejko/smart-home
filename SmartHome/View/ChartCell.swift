@@ -2,8 +2,8 @@
 //  ChartCell.swift
 //  SmartHome
 //
-//  Created by user164182 on 3/27/20.
-//  Copyright © 2020 Maciej Wołejko. All rights reserved.
+//  Created by MW on 3/27/20.
+//  Copyright © 2020 MW. All rights reserved.
 //
 
 import UIKit
@@ -37,7 +37,7 @@ class ChartCell: UICollectionViewCell {
     }
     
     func setupObjects() {
-        [chartLabel].forEach({addSubview($0)})
+        [chartLabel].forEach{addSubview($0)}
         
         NSLayoutConstraint.activate([
             chartLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),

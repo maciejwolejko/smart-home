@@ -2,22 +2,13 @@
 //  RoomCell.swift
 //  SmartHome
 //
-//  Created by Maciej Wołejko on 06/03/2020.
-//  Copyright © 2020 Maciej Wołejko. All rights reserved.
+//  Created by MW on 06/03/2020.
+//  Copyright © 2020 MW. All rights reserved.
 //
 
 import UIKit
 
 class RoomCell: UICollectionViewCell {
-    
-    var room: Room! {
-        didSet {
-            nameRoom.text = room.name
-            iconRoom.image = UIImage(named: room.icon!)?.withRenderingMode(.alwaysTemplate)
-            iconRoom.tintColor = UIColor(red: 27/255, green: 183/255, blue: 233/255, alpha: 1)
-            backgroundColor = UIColor(red: 53/255, green: 42/255, blue: 129/255, alpha: 1)
-        }
-    }
     
     let screen = UIScreen.main.bounds
     
@@ -37,6 +28,7 @@ class RoomCell: UICollectionViewCell {
     
     lazy var deviceNumber: UILabel = {
         let dn = UILabel()
+        dn.textColor = .gray
         dn.translatesAutoresizingMaskIntoConstraints = false
         return dn
     }()
@@ -45,16 +37,21 @@ class RoomCell: UICollectionViewCell {
         super.init(frame: .zero)
         
         setupObjects()
+        iconRoom.tintColor = UIColor(red: 27/255, green: 183/255, blue: 233/255, alpha: 1)
+        backgroundColor = UIColor(red: 55/255, green: 50/255, blue: 135/255, alpha: 1)
+        
     }
     
     func setupObjects() {
-        [iconRoom, nameRoom/*, deviceNumber*/].forEach({addSubview($0)})
+        [iconRoom, nameRoom, deviceNumber].forEach{addSubview($0)}
 
         NSLayoutConstraint.activate([
             nameRoom.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -20),
             nameRoom.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 50),
             iconRoom.centerYAnchor.constraint(equalTo: centerYAnchor),
-            iconRoom.leftAnchor.constraint(equalTo: leftAnchor, constant: 50)
+            iconRoom.leftAnchor.constraint(equalTo: leftAnchor, constant: 50),
+            deviceNumber.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 20),
+            deviceNumber.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 50)
         ])
         
     }
