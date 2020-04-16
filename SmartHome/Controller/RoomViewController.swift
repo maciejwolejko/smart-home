@@ -31,7 +31,7 @@ class RoomViewController: UIViewController {
         return button
     }()
        
-    private lazy var roomNameLabel: UILabel = {
+    lazy var roomNameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20)
         label.textColor = .white
