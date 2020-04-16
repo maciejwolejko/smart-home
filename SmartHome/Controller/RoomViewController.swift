@@ -2,8 +2,8 @@
 //  RoomViewController.swift
 //  SmartHome
 //
-//  Created by user164182 on 3/26/20.
-//  Copyright © 2020 Maciej Wołejko. All rights reserved.
+//  Created by MW on 3/26/20.
+//  Copyright © 2020 MW. All rights reserved.
 //
 
 import UIKit
@@ -13,7 +13,7 @@ class RoomViewController: UIViewController {
 
     var roomId = ""
     
-    lazy var userNameButton: UIButton = {
+    private lazy var userNameButton: UIButton = {
         let bt = UIButton()
         bt.setTitle("Hi, Maciej", for: .normal)
         bt.setTitleColor(.white, for: .normal)
@@ -23,7 +23,7 @@ class RoomViewController: UIViewController {
         return bt
     }()
     
-    lazy var userButton: UIButton = {
+    private lazy var userButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "user")?.withRenderingMode(.alwaysOriginal), for: .normal)
         button.addTarget(self, action: #selector(userAccountButtonPressed), for: .touchUpInside)
@@ -31,7 +31,7 @@ class RoomViewController: UIViewController {
         return button
     }()
        
-    lazy var roomNameLabel: UILabel = {
+    private lazy var roomNameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20)
         label.textColor = .white
@@ -39,7 +39,7 @@ class RoomViewController: UIViewController {
         return label
     }()
     
-    lazy var deleteButton: UIButton = {
+    private lazy var deleteButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "trash")?.withRenderingMode(.alwaysTemplate), for: .normal)
         button.tintColor = .white
@@ -52,7 +52,6 @@ class RoomViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor(red: 41/255, green: 40/255, blue: 102/255, alpha: 1)
-        
         setupObjects()
         
     }
@@ -78,7 +77,7 @@ class RoomViewController: UIViewController {
     }
     
     func setupObjects() {
-        [userNameButton, deleteButton, userButton, roomNameLabel].forEach({view.addSubview($0)})
+        [userNameButton, deleteButton, userButton, roomNameLabel].forEach{view.addSubview($0)}
            
         userNameButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 10, left: 20, bottom: 0, right: 0))
         
