@@ -69,7 +69,7 @@ extension NewRoomViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! ChooseRoomCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? ChooseRoomCell else { return UITableViewCell() }
         cell.textLabel?.text = roomNames[indexPath.row]
         cell.detailTextLabel!.text = "Choose this room"
         cell.imageView!.image = UIImage(named: roomImages[indexPath.row])?.withRenderingMode(.alwaysTemplate)
