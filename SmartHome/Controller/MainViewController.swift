@@ -2,8 +2,8 @@
 //  MainViewController.swift
 //  SmartHome
 //
-//  Created by Maciej Wołejko on 06/03/2020.
-//  Copyright © 2020 Maciej Wołejko. All rights reserved.
+//  Created by MW on 06/03/2020.
+//  Copyright © 2020 MW. All rights reserved.
 //
 
 import UIKit
@@ -117,18 +117,14 @@ class MainViewController: UIViewController {
         view.backgroundColor = UIColor(red: 41/255, green: 40/255, blue: 102/255, alpha: 1)
         navigationItem.setHidesBackButton(true, animated: true)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: userNameButton)
-
         setupObjects()
-
         view.bringSubviewToFront(addNewRoomButton)
-        
         fetchingData()
-
         displayUserName()
     }
     
     func displayUserName() {
-        Database.database().reference().child("registeredUsers")
+        FirebaseService.shared.reference(to: .registeredUsers)
             .queryOrdered(byChild: "uid")
             .queryEqual(toValue: Auth.auth().currentUser?.uid)
             .observe(.childAdded) { (snapshot) in
@@ -175,21 +171,21 @@ class MainViewController: UIViewController {
     }
 
     func fetchingData() {
-        
-        Database.database().reference().child("User").child(Auth.auth().currentUser!.uid)
-        .observe(.childAdded) { (snapshot) in
+        FirebaseService.shared.reference(to: .User)
+            .child(Auth.auth().currentUser!.uid)
+            .observe(.childAdded) { (snapshot) in
             
-            if let dictionary = snapshot.value as? [String: Any] {
-                var room = Room(icon: "", name: "", numberOfDevices: "")
-                room.name = dictionary["name"] as? String
-                room.icon = dictionary["icon"] as? String
-                room.id = dictionary["id"] as? String
-                self.rooms.append(room)
+                if let dictionary = snapshot.value as? [String: Any] {
+                    var room = Room(icon: "", name: "", numberOfDevices: "")
+                    room.name = dictionary["name"] as? String
+                    room.icon = dictionary["icon"] as? String
+                    room.id = dictionary["id"] as? String
+                    self.rooms.append(room)
                 
-                DispatchQueue.main.async {
-                    self.roomCollectionView.reloadData()
+                    DispatchQueue.main.async {
+                        self.roomCollectionView.reloadData()
+                    }
                 }
-            }
         }
     }
     
