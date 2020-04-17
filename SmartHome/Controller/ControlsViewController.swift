@@ -47,10 +47,11 @@ class ControlsViewController: UIViewController {
     }
     
     func displayUserName() {
-        Database.database().reference().child("registeredUsers")
+        FirebaseService.shared.reference(to: .registeredUsers)
             .queryOrdered(byChild: "uid")
             .queryEqual(toValue: Auth.auth().currentUser?.uid)
             .observe(.childAdded) { (snapshot) in
+                
                 if let dictionary = snapshot.value as? [String: Any] {
                     let name = dictionary["name"] as? String
                     self.userNameButton.setTitle("Hi, \(name!)", for: .normal)
