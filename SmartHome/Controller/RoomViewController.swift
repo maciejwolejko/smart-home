@@ -60,7 +60,10 @@ class RoomViewController: UIViewController {
         let alert = UIAlertController(title: "Czy na pewno chcesz usunac ten pokoj?", message: "", preferredStyle: .alert)
        
         alert.addAction(UIAlertAction(title: "Tak", style: .default, handler: { (action) in
-            Database.database().reference().child("User").child(Auth.auth().currentUser!.uid).child(self.roomId).removeValue()
+            FirebaseService.shared.reference(to: .User)
+                .child(Auth.auth()
+                .currentUser!.uid)
+                .child(self.roomId).removeValue()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.navigationController?.pushViewController(TabBarViewController(), animated: true)
