@@ -32,15 +32,13 @@ class CameraViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor(red: 41/255, green: 40/255, blue: 102/255, alpha: 1)
-        
         setupObjects()
-        
         displayUserName()
         
     }
 
     func displayUserName() {
-        Database.database().reference().child("registeredUsers")
+        FirebaseService.shared.reference(to: .registeredUsers)
             .queryOrdered(byChild: "uid")
             .queryEqual(toValue: Auth.auth().currentUser?.uid)
             .observe(.childAdded) { (snapshot) in
