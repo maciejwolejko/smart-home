@@ -177,7 +177,6 @@ class MainViewController: UIViewController {
 
     func fetchingData() {
         FirebaseService.shared.reference(to: .user)
-
             .child(Auth.auth().currentUser!.uid)
             .observe(.childAdded) { (snapshot) in
             
@@ -200,6 +199,8 @@ class MainViewController: UIViewController {
         [userNameButton, userButton, modeLabel, modeStackView, roomLabel, roomCollectionView, addNewRoomButton].forEach { view.addSubview($0) }
 
         userNameButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 10, left: 20, bottom: 0, right: 0))
+        
+        userButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: nil, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 10, left: 0, bottom: 0, right: 20), size: .init(width: 45, height: 45))
         
         modeLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: screen.height * 0.075, left: screen.width * 0.05, bottom: 0, right: 0), size: .init(width: 0, height: screen.height * 0.02))
             

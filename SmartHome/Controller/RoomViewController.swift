@@ -53,7 +53,6 @@ class RoomViewController: UIViewController {
 
         view.backgroundColor = UIColor(red: 41/255, green: 40/255, blue: 102/255, alpha: 1)
         setupObjects()
-        
     }
        
     @objc func deleteCellButtonPressed() {
@@ -61,11 +60,10 @@ class RoomViewController: UIViewController {
     
         alert.addAction(UIAlertAction(title: "Tak", style: .default, handler: { (_) in
             FirebaseService.shared.reference(to: .user)
-
                 .child(Auth.auth()
                 .currentUser!.uid)
                 .child(self.roomId).removeValue()
-            
+        
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.navigationController?.pushViewController(TabBarViewController(), animated: true)
             }
@@ -84,7 +82,6 @@ class RoomViewController: UIViewController {
     func setupObjects() {
         [userNameButton, deleteButton, userButton, roomNameLabel].forEach { view.addSubview($0) }
 
-           
         userNameButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 10, left: 20, bottom: 0, right: 0))
         
         deleteButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: nil, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 10, left: 0, bottom: 0, right: 70), size: .init(width: 45, height: 45))

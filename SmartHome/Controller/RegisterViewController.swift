@@ -191,7 +191,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                     let alertController = UIAlertController(title: "Registration Successful", message: "You can now log in to your account!", preferredStyle: .alert)
                     let ref = FirebaseService.shared.reference(to: .registeredUsers).childByAutoId()
                     let values = ["name": self.nameTextField.text, "email": self.emailTextField.text, "uid": Auth.auth().currentUser?.uid]
-
                     ref.updateChildValues(values as [AnyHashable: Any])
                     
                     //moze uzyc tu RxSwift? Bo sie bedziemy cofac i to bylby dobry pomysl...
@@ -208,8 +207,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     }
     
     func setupObjects() {
-
-        [backButton, logoImage, nameLabel, subNameLabel, nameStringLabel, nameTextField, emailLabel, emailTextField, passwordLabel, passwordTextField, rePasswordLabel, rePasswordTextField, registerButton].forEach {view.addSubview($0)}
+        [backButton, logoImage, nameLabel, subNameLabel, nameStringLabel, nameTextField, emailLabel, emailTextField, passwordLabel, passwordTextField, rePasswordLabel, rePasswordTextField, registerButton].forEach { view.addSubview($0) }
         
         backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: nil, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: screen.height * 0.02, left: 0, bottom: 0, right: screen.width * 0.04), size: .init(width: 0, height: screen.height * 0.05))
             
