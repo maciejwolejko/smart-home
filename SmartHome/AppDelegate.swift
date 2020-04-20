@@ -2,21 +2,20 @@
 //  AppDelegate.swift
 //  SmartHome
 //
-//  Created by Maciej Wołejko on 06/03/2020.
-//  Copyright © 2020 Maciej Wołejko. All rights reserved.
+//  Created by MW on 06/03/2020.
+//  Copyright © 2020 MW. All rights reserved.
 //
 
 import UIKit
-import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        FirebaseApp.configure()
+        
+        FirebaseService.shared.configure()
+        
         return true
     }
 
@@ -34,6 +33,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-
 }
-

@@ -6,4 +6,8 @@
 //  Copyright © 2020 Maciej Wołejko. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+struct RoomViewModel {
+
+}

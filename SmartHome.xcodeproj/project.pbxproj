@@ -7,7 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		884FC45B242B7B8B00116070 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 884FC45A242B7B8B00116070 /* Storyboard.storyboard */; };
+		884FC45D242B9FC700116070 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884FC45C242B9FC700116070 /* TabBarViewController.swift */; };
+		8877E0F3242E109B005BE984 /* ChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8877E0F2242E109B005BE984 /* ChartCell.swift */; };
+		888363F2242CC13F0021739E /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888363F1242CC13F0021739E /* CameraViewController.swift */; };
+		888363F4242CC14C0021739E /* ControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888363F3242CC14C0021739E /* ControlsViewController.swift */; };
+		888363F6242CC1680021739E /* AnalyticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888363F5242CC1680021739E /* AnalyticViewController.swift */; };
+		888363F8242CD2140021739E /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888363F7242CD2140021739E /* RoomViewController.swift */; };
+		888363FA242CE5A40021739E /* AnalyticsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888363F9242CE5A40021739E /* AnalyticsCell.swift */; };
+		88A5060624487229009796E1 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A5060524487229009796E1 /* FirebaseService.swift */; };
+		88A5060824487E96009796E1 /* FirebaseReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A5060724487E96009796E1 /* FirebaseReference.swift */; };
+		88CBF624242E38AA00A33AE9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 88CBF623242E38A900A33AE9 /* README.md */; };
 		9E7A9C3D6AAC961E30A410E0 /* Pods_SmartHome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2AA81E147CEDB387A71EAB4 /* Pods_SmartHome.framework */; };
+		ED207C382413B79700188417 /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED207C372413B79700188417 /* RoomViewModel.swift */; };
 		ED4FE8F224125BD10083B54C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4FE8F124125BD10083B54C /* AppDelegate.swift */; };
 		ED4FE8F424125BD10083B54C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4FE8F324125BD10083B54C /* SceneDelegate.swift */; };
 		ED4FE8F624125BD10083B54C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4FE8F524125BD10083B54C /* LoginViewController.swift */; };
@@ -26,8 +38,20 @@
 
 /* Begin PBXFileReference section */
 		5B62BC758AA8603B272A0196 /* Pods-SmartHome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHome.release.xcconfig"; path = "Target Support Files/Pods-SmartHome/Pods-SmartHome.release.xcconfig"; sourceTree = "<group>"; };
+		884FC45A242B7B8B00116070 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		884FC45C242B9FC700116070 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		8877E0F2242E109B005BE984 /* ChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCell.swift; sourceTree = "<group>"; };
+		888363F1242CC13F0021739E /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		888363F3242CC14C0021739E /* ControlsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsViewController.swift; sourceTree = "<group>"; };
+		888363F5242CC1680021739E /* AnalyticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticViewController.swift; sourceTree = "<group>"; };
+		888363F7242CD2140021739E /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
+		888363F9242CE5A40021739E /* AnalyticsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsCell.swift; sourceTree = "<group>"; };
+		88A5060524487229009796E1 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		88A5060724487E96009796E1 /* FirebaseReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseReference.swift; sourceTree = "<group>"; };
+		88CBF623242E38A900A33AE9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		A2AA81E147CEDB387A71EAB4 /* Pods_SmartHome.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartHome.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC0F9C39DBE42CACD39D6750 /* Pods-SmartHome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHome.debug.xcconfig"; path = "Target Support Files/Pods-SmartHome/Pods-SmartHome.debug.xcconfig"; sourceTree = "<group>"; };
+		ED207C372413B79700188417 /* RoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModel.swift; sourceTree = "<group>"; };
 		ED4FE8EE24125BD10083B54C /* SmartHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED4FE8F124125BD10083B54C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED4FE8F324125BD10083B54C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,17 +120,21 @@
 		ED4FE8F024125BD10083B54C /* SmartHome */ = {
 			isa = PBXGroup;
 			children = (
+				88CBF623242E38A900A33AE9 /* README.md */,
 				ED4FE90524125C8D0083B54C /* Helpers */,
 				ED4FE90624125C9C0083B54C /* ViewModel */,
 				ED4FE90724125CA20083B54C /* Model */,
 				ED4FE90824125CA70083B54C /* View */,
 				ED4FE90924125CAB0083B54C /* Controller */,
-				ED4FE8FA24125BDA0083B54C /* Assets.xcassets */,
 				ED4FE8F124125BD10083B54C /* AppDelegate.swift */,
 				ED4FE8F324125BD10083B54C /* SceneDelegate.swift */,
+				88A5060524487229009796E1 /* FirebaseService.swift */,
+				88A5060724487E96009796E1 /* FirebaseReference.swift */,
 				ED4FE8FC24125BDA0083B54C /* LaunchScreen.storyboard */,
 				ED4FE8FF24125BDA0083B54C /* Info.plist */,
 				ED4FE91A241260B90083B54C /* GoogleService-Info.plist */,
+				884FC45A242B7B8B00116070 /* Storyboard.storyboard */,
+				ED4FE8FA24125BDA0083B54C /* Assets.xcassets */,
 			);
 			path = SmartHome;
 			sourceTree = "<group>";
@@ -122,6 +150,7 @@
 		ED4FE90624125C9C0083B54C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				ED207C372413B79700188417 /* RoomViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -139,6 +168,8 @@
 			children = (
 				ED4FE91224125DA90083B54C /* RoomCell.swift */,
 				ED4FE91424125DC60083B54C /* ChooseRoomCell.swift */,
+				888363F9242CE5A40021739E /* AnalyticsCell.swift */,
+				8877E0F2242E109B005BE984 /* ChartCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -149,8 +180,13 @@
 				ED4FE8F524125BD10083B54C /* LoginViewController.swift */,
 				ED4FE90A24125D170083B54C /* RegisterViewController.swift */,
 				ED4FE90C24125D310083B54C /* RePasswordViewController.swift */,
-				ED4FE90E24125D500083B54C /* MainViewController.swift */,
 				ED4FE91024125D6A0083B54C /* NewRoomViewController.swift */,
+				ED4FE90E24125D500083B54C /* MainViewController.swift */,
+				888363F7242CD2140021739E /* RoomViewController.swift */,
+				888363F1242CC13F0021739E /* CameraViewController.swift */,
+				888363F3242CC14C0021739E /* ControlsViewController.swift */,
+				888363F5242CC1680021739E /* AnalyticViewController.swift */,
+				884FC45C242B9FC700116070 /* TabBarViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -162,6 +198,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED4FE90224125BDA0083B54C /* Build configuration list for PBXNativeTarget "SmartHome" */;
 			buildPhases = (
+				ED50A6CE2413A5A5003413A5 /* ShellScript */,
 				F8C79AD1AB2D07C19D9108AF /* [CP] Check Pods Manifest.lock */,
 				ED4FE8EA24125BD10083B54C /* Sources */,
 				ED4FE8EB24125BD10083B54C /* Frameworks */,
@@ -216,6 +253,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED4FE8FE24125BDA0083B54C /* LaunchScreen.storyboard in Resources */,
+				884FC45B242B7B8B00116070 /* Storyboard.storyboard in Resources */,
+				88CBF624242E38AA00A33AE9 /* README.md in Resources */,
 				ED4FE8FB24125BDA0083B54C /* Assets.xcassets in Resources */,
 				ED4FE91B241260B90083B54C /* GoogleService-Info.plist in Resources */,
 			);
@@ -240,6 +279,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartHome/Pods-SmartHome-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		ED50A6CE2413A5A5003413A5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		F8C79AD1AB2D07C19D9108AF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -275,10 +331,20 @@
 				ED4FE8F224125BD10083B54C /* AppDelegate.swift in Sources */,
 				ED4FE91124125D6A0083B54C /* NewRoomViewController.swift in Sources */,
 				ED4FE91724125DE30083B54C /* Room.swift in Sources */,
+				884FC45D242B9FC700116070 /* TabBarViewController.swift in Sources */,
+				88A5060624487229009796E1 /* FirebaseService.swift in Sources */,
+				888363FA242CE5A40021739E /* AnalyticsCell.swift in Sources */,
 				ED4FE90D24125D310083B54C /* RePasswordViewController.swift in Sources */,
 				ED4FE90F24125D500083B54C /* MainViewController.swift in Sources */,
+				888363F4242CC14C0021739E /* ControlsViewController.swift in Sources */,
+				ED207C382413B79700188417 /* RoomViewModel.swift in Sources */,
 				ED4FE8F424125BD10083B54C /* SceneDelegate.swift in Sources */,
+				888363F6242CC1680021739E /* AnalyticViewController.swift in Sources */,
 				ED4FE91324125DA90083B54C /* RoomCell.swift in Sources */,
+				8877E0F3242E109B005BE984 /* ChartCell.swift in Sources */,
+				88A5060824487E96009796E1 /* FirebaseReference.swift in Sources */,
+				888363F8242CD2140021739E /* RoomViewController.swift in Sources */,
+				888363F2242CC13F0021739E /* CameraViewController.swift in Sources */,
 				ED4FE91924125DFA0083B54C /* Extensions.swift in Sources */,
 				ED4FE90B24125D170083B54C /* RegisterViewController.swift in Sources */,
 			);
