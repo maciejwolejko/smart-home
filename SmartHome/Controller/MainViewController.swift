@@ -92,7 +92,7 @@ class MainViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+ 
     private lazy var roomCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -115,6 +115,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 41/255, green: 40/255, blue: 102/255, alpha: 1)
+
         navigationItemSetup()
         setupObjects()
         view.bringSubviewToFront(addNewRoomButton)
@@ -138,7 +139,7 @@ class MainViewController: UIViewController {
         navigationItem.setHidesBackButton(true, animated: true)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: userNameButton)
     }
-    
+
    @objc func userAccountButtonPressed() {
         print(1)
     }
@@ -176,6 +177,7 @@ class MainViewController: UIViewController {
 
     func fetchingData() {
         FirebaseService.shared.reference(to: .user)
+
             .child(Auth.auth().currentUser!.uid)
             .observe(.childAdded) { (snapshot) in
             
@@ -184,6 +186,7 @@ class MainViewController: UIViewController {
                     room.name = dictionary["name"] as? String
                     room.icon = dictionary["icon"] as? String
                     room.uid = dictionary["id"] as? String
+
                     self.rooms.append(room)
                 
                     DispatchQueue.main.async {
@@ -195,10 +198,8 @@ class MainViewController: UIViewController {
     
     func setupObjects() {
         [userNameButton, userButton, modeLabel, modeStackView, roomLabel, roomCollectionView, addNewRoomButton].forEach { view.addSubview($0) }
-        
+
         userNameButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 10, left: 20, bottom: 0, right: 0))
-        
-        userButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: nil, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 10, left: 0, bottom: 0, right: 20), size: .init(width: 45, height: 45))
         
         modeLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: screen.height * 0.075, left: screen.width * 0.05, bottom: 0, right: 0), size: .init(width: 0, height: screen.height * 0.02))
             
@@ -207,7 +208,7 @@ class MainViewController: UIViewController {
         roomLabel.anchor(top: modeStackView.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: screen.height * 0.02, left: screen.width * 0.05, bottom: 0, right: 0), size: .init(width: 0, height: screen.height * 0.02))
         
         roomCollectionView.anchor(top: roomLabel.bottomAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor, padding: .init(top: 10, left: 10, bottom: 70, right: 10))
-        
+
         addNewRoomButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: nil, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: screen.height * 0.76, left: 0, bottom: 0, right: screen.width * 0.01), size: .init(width: screen.width * 0.2, height: screen.height * 0.1))
     
     }
@@ -255,5 +256,6 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         view.roomNameLabel.text = "\(name)"
         view.roomId = uid
         navigationController?.pushViewController(view, animated: true)
+
     }
 }

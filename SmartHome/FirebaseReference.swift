@@ -9,6 +9,7 @@
 import Foundation
 
 enum FirebaseReference: String {
+
     case user
     case registeredUsers
 }

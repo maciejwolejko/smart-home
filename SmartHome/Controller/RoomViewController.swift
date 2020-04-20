@@ -58,9 +58,10 @@ class RoomViewController: UIViewController {
        
     @objc func deleteCellButtonPressed() {
         let alert = UIAlertController(title: "Czy na pewno chcesz usunac ten pokoj?", message: "", preferredStyle: .alert)
-       
+    
         alert.addAction(UIAlertAction(title: "Tak", style: .default, handler: { (_) in
             FirebaseService.shared.reference(to: .user)
+
                 .child(Auth.auth()
                 .currentUser!.uid)
                 .child(self.roomId).removeValue()
@@ -71,6 +72,7 @@ class RoomViewController: UIViewController {
         }))
         
         alert.addAction(UIAlertAction(title: "Nie", style: .cancel, handler: { (_) in
+
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.navigationController?.pushViewController(TabBarViewController(), animated: true)
             }
@@ -81,6 +83,7 @@ class RoomViewController: UIViewController {
     
     func setupObjects() {
         [userNameButton, deleteButton, userButton, roomNameLabel].forEach { view.addSubview($0) }
+
            
         userNameButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 10, left: 20, bottom: 0, right: 0))
         

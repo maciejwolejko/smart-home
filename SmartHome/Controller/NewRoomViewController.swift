@@ -44,11 +44,19 @@ class NewRoomViewController: UIViewController {
         
         view.backgroundColor = UIColor(red: 41/255, green: 40/255, blue: 102/255, alpha: 1)
         setupObjects()
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 075fa7a1c72d9b1422ccc39e16009ef693db224f
     }
     
     func setupObjects() {
         
+<<<<<<< HEAD
         [backButton, tableView].forEach { view.addSubview($0) }
+=======
+        [backButton, tableView].forEach{view.addSubview($0)}
+>>>>>>> 075fa7a1c72d9b1422ccc39e16009ef693db224f
         
         backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 10, left: 20, bottom: 0, right: 0))
         
@@ -68,7 +76,10 @@ extension NewRoomViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+<<<<<<< HEAD
         
+=======
+>>>>>>> 075fa7a1c72d9b1422ccc39e16009ef693db224f
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? ChooseRoomCell else { return UITableViewCell() }
         cell.textLabel?.text = roomNames[indexPath.row]
         cell.detailTextLabel!.text = "Choose this room"
@@ -86,9 +97,15 @@ extension NewRoomViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let name = roomNames[indexPath.row]
         let image = roomImages[indexPath.row]
+<<<<<<< HEAD
         let ref = FirebaseService.shared.reference(to: .user).child(Auth.auth().currentUser!.uid).childByAutoId()
         let values = ["name": name, "icon": image, "devicesNumber": "", "id": ref.key]
         ref.updateChildValues(values as [AnyHashable: Any])
+=======
+        let ref = Database.database().reference().child("User").child(Auth.auth().currentUser!.uid).childByAutoId()
+        let values = ["name": name, "icon": image, "devicesNumber": "", "id": ref.key] as [String : Any]
+        ref.updateChildValues(values)
+>>>>>>> 075fa7a1c72d9b1422ccc39e16009ef693db224f
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.navigationController?.pushViewController(TabBarViewController(), animated: true)

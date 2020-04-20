@@ -191,6 +191,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                     let alertController = UIAlertController(title: "Registration Successful", message: "You can now log in to your account!", preferredStyle: .alert)
                     let ref = FirebaseService.shared.reference(to: .registeredUsers).childByAutoId()
                     let values = ["name": self.nameTextField.text, "email": self.emailTextField.text, "uid": Auth.auth().currentUser?.uid]
+
                     ref.updateChildValues(values as [AnyHashable: Any])
                     
                     //moze uzyc tu RxSwift? Bo sie bedziemy cofac i to bylby dobry pomysl...

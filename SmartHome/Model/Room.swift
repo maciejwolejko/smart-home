@@ -13,4 +13,5 @@ struct Room {
     var name: String?
     var numberOfDevices: String?
     var uid: String?
+
 }

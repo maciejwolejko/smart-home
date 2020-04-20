@@ -46,6 +46,5 @@ class TabBarViewController: UITabBarController {
         fourthViewController.tabBarItem.titlePositionAdjustment = .init(horizontal: 0, vertical: 10)
         
         viewControllers = [firstViewController, secondViewController, thirdViewController, fourthViewController]
-        
     }
 }

@@ -94,6 +94,7 @@ class AnalyticViewController: UIViewController {
 
     func setupObjects() {
         [userNameButton, userButton, daysCollectionView, line, horizontalBar, chartCollectionView].forEach { view.addSubview($0) }
+
         
         userNameButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 10, left: 20, bottom: 0, right: 0))
         

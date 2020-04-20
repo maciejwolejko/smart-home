@@ -50,6 +50,7 @@ class RePasswordViewController: UIViewController, UITextFieldDelegate {
         return label
     }()
     
+
     private lazy var emailTextField: UITextField = {
         let textField = UITextField()
         textField.layer.borderWidth = 1
@@ -89,8 +90,8 @@ class RePasswordViewController: UIViewController, UITextFieldDelegate {
      }
     
     func setupObjects() {
-
         [logoImage, nameLabel, subNameLabel, emailLabel, emailTextField, sendNewPasswordButton].forEach { view.addSubview($0) }
+
         
         logoImage.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nameLabel.leadingAnchor, padding: .init(top: screen.height * 0.075, left: screen.width * 0.15, bottom: 0, right: screen.width * 0.015), size: .init(width: 0, height: screen.height * 0.1))
         
