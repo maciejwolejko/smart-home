@@ -12,7 +12,4 @@ The application was based on the Omaha's Pinter dribbble project.
 The Firebase Realtime Database is a cloud-hosted database. Data is stored as JSON and synchronized in realtime to every connected client. Instead of typical HTTP requests, the Firebase Realtime Database uses data synchronization - every time data changes, any connected device receives that update within miliseconds. Provide collaborative and immersive experiences without thinking about networking code. When apps go offline used Firebase Realtime Database SDK persists your data to disk. Once connectivity is reestablished, the client device receives any changes it missed, synchronizing it with the current server state.
 
 # hardware
-The system of Inteligent Building is not already finished. Software for STMicroelectronics processors are not finished. 
-
-# hardware
-The system of Inteligent Building is not already finished. Printed Circuit Boards and softwares for STMicroelectronics processors are not finished either.
+The system of Inteligent Building is not already finished. Software for STMicroelectronics processors are not finished.  
