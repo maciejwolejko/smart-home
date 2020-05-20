@@ -20,6 +20,15 @@
 		88CBF624242E38AA00A33AE9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 88CBF623242E38A900A33AE9 /* README.md */; };
 		9E7A9C3D6AAC961E30A410E0 /* Pods_SmartHome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2AA81E147CEDB387A71EAB4 /* Pods_SmartHome.framework */; };
 		ED207C382413B79700188417 /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED207C372413B79700188417 /* RoomViewModel.swift */; };
+		ED32FDFA2475247800C01634 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED32FDF92475247800C01634 /* LoginView.swift */; };
+		ED32FDFC24752C0F00C01634 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED32FDFB24752C0F00C01634 /* RegisterView.swift */; };
+		ED32FDFE24752ED500C01634 /* RePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED32FDFD24752ED500C01634 /* RePasswordView.swift */; };
+		ED32FE002475312F00C01634 /* NewRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED32FDFF2475312F00C01634 /* NewRoomView.swift */; };
+		ED32FE02247533AE00C01634 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED32FE01247533AE00C01634 /* MainView.swift */; };
+		ED32FE04247539F100C01634 /* RoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED32FE03247539F100C01634 /* RoomView.swift */; };
+		ED32FE0624753EA700C01634 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED32FE0524753EA700C01634 /* CameraView.swift */; };
+		ED32FE08247540E800C01634 /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED32FE07247540E800C01634 /* ControlsView.swift */; };
+		ED32FE0A2475424F00C01634 /* AnalyticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED32FE092475424F00C01634 /* AnalyticView.swift */; };
 		ED4FE8F224125BD10083B54C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4FE8F124125BD10083B54C /* AppDelegate.swift */; };
 		ED4FE8F424125BD10083B54C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4FE8F324125BD10083B54C /* SceneDelegate.swift */; };
 		ED4FE8F624125BD10083B54C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4FE8F524125BD10083B54C /* LoginViewController.swift */; };
@@ -52,6 +61,15 @@
 		A2AA81E147CEDB387A71EAB4 /* Pods_SmartHome.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartHome.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC0F9C39DBE42CACD39D6750 /* Pods-SmartHome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHome.debug.xcconfig"; path = "Target Support Files/Pods-SmartHome/Pods-SmartHome.debug.xcconfig"; sourceTree = "<group>"; };
 		ED207C372413B79700188417 /* RoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModel.swift; sourceTree = "<group>"; };
+		ED32FDF92475247800C01634 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		ED32FDFB24752C0F00C01634 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		ED32FDFD24752ED500C01634 /* RePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePasswordView.swift; sourceTree = "<group>"; };
+		ED32FDFF2475312F00C01634 /* NewRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoomView.swift; sourceTree = "<group>"; };
+		ED32FE01247533AE00C01634 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		ED32FE03247539F100C01634 /* RoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomView.swift; sourceTree = "<group>"; };
+		ED32FE0524753EA700C01634 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		ED32FE07247540E800C01634 /* ControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
+		ED32FE092475424F00C01634 /* AnalyticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticView.swift; sourceTree = "<group>"; };
 		ED4FE8EE24125BD10083B54C /* SmartHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED4FE8F124125BD10083B54C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED4FE8F324125BD10083B54C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,10 +184,19 @@
 		ED4FE90824125CA70083B54C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				ED32FDF92475247800C01634 /* LoginView.swift */,
+				ED32FDFB24752C0F00C01634 /* RegisterView.swift */,
+				ED32FDFD24752ED500C01634 /* RePasswordView.swift */,
+				ED32FDFF2475312F00C01634 /* NewRoomView.swift */,
+				ED32FE01247533AE00C01634 /* MainView.swift */,
+				ED32FE03247539F100C01634 /* RoomView.swift */,
+				ED32FE0524753EA700C01634 /* CameraView.swift */,
 				ED4FE91224125DA90083B54C /* RoomCell.swift */,
 				ED4FE91424125DC60083B54C /* ChooseRoomCell.swift */,
 				888363F9242CE5A40021739E /* AnalyticsCell.swift */,
 				8877E0F2242E109B005BE984 /* ChartCell.swift */,
+				ED32FE07247540E800C01634 /* ControlsView.swift */,
+				ED32FE092475424F00C01634 /* AnalyticView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -327,23 +354,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED4FE8F624125BD10083B54C /* LoginViewController.swift in Sources */,
+				ED32FE02247533AE00C01634 /* MainView.swift in Sources */,
 				ED4FE91524125DC60083B54C /* ChooseRoomCell.swift in Sources */,
 				ED4FE8F224125BD10083B54C /* AppDelegate.swift in Sources */,
 				ED4FE91124125D6A0083B54C /* NewRoomViewController.swift in Sources */,
+				ED32FE0A2475424F00C01634 /* AnalyticView.swift in Sources */,
+				ED32FE08247540E800C01634 /* ControlsView.swift in Sources */,
 				ED4FE91724125DE30083B54C /* Room.swift in Sources */,
 				884FC45D242B9FC700116070 /* TabBarViewController.swift in Sources */,
 				88A5060624487229009796E1 /* FirebaseService.swift in Sources */,
 				888363FA242CE5A40021739E /* AnalyticsCell.swift in Sources */,
+				ED32FE04247539F100C01634 /* RoomView.swift in Sources */,
+				ED32FDFA2475247800C01634 /* LoginView.swift in Sources */,
+				ED32FDFC24752C0F00C01634 /* RegisterView.swift in Sources */,
 				ED4FE90D24125D310083B54C /* RePasswordViewController.swift in Sources */,
 				ED4FE90F24125D500083B54C /* MainViewController.swift in Sources */,
 				888363F4242CC14C0021739E /* ControlsViewController.swift in Sources */,
+				ED32FE0624753EA700C01634 /* CameraView.swift in Sources */,
 				ED207C382413B79700188417 /* RoomViewModel.swift in Sources */,
 				ED4FE8F424125BD10083B54C /* SceneDelegate.swift in Sources */,
+				ED32FE002475312F00C01634 /* NewRoomView.swift in Sources */,
 				888363F6242CC1680021739E /* AnalyticViewController.swift in Sources */,
 				ED4FE91324125DA90083B54C /* RoomCell.swift in Sources */,
 				8877E0F3242E109B005BE984 /* ChartCell.swift in Sources */,
 				88A5060824487E96009796E1 /* FirebaseReference.swift in Sources */,
 				888363F8242CD2140021739E /* RoomViewController.swift in Sources */,
+				ED32FDFE24752ED500C01634 /* RePasswordView.swift in Sources */,
 				888363F2242CC13F0021739E /* CameraViewController.swift in Sources */,
 				ED4FE91924125DFA0083B54C /* Extensions.swift in Sources */,
 				ED4FE90B24125D170083B54C /* RegisterViewController.swift in Sources */,

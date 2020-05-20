@@ -39,10 +39,10 @@ class RoomCell: UICollectionViewCell {
         setupObjects()
         iconRoom.tintColor = UIColor(red: 27/255, green: 183/255, blue: 233/255, alpha: 1)
         backgroundColor = UIColor(red: 55/255, green: 50/255, blue: 135/255, alpha: 1)
-        
     }
     
     func setupObjects() {
+        
         [iconRoom, nameRoom, deviceNumber].forEach { addSubview($0) }
 
         NSLayoutConstraint.activate([
@@ -53,7 +53,6 @@ class RoomCell: UICollectionViewCell {
             deviceNumber.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 20),
             deviceNumber.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 50)
         ])
-        
     }
     
     required init?(coder: NSCoder) {

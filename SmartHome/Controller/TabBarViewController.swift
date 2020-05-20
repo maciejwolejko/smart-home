@@ -19,6 +19,7 @@ class TabBarViewController: UITabBarController {
     }
     
     func setupTabBar() {
+        
         tabBar.layer.masksToBounds = true
         tabBar.layer.cornerRadius = 20
         tabBar.tintColor = UIColor(red: 27/255, green: 183/255, blue: 233/255, alpha: 1)

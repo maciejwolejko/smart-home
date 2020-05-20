@@ -9,50 +9,34 @@
 import UIKit
 import Firebase
 
-private let reuseIdentifier = "reuseCell"
+
 
 class NewRoomViewController: UIViewController {
     
+    let initObjects = NewRoomView()
+    let reuseIdentifier = "reuseCell"
     let roomNames = ["Living Room", "Bathroom", "Bedroom", "Kitchen"]
     let roomImages = ["livingroom", "bathroom", "bedroom", "kitchen"]
-    let screen = UIScreen.main.bounds
-    
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.separatorColor = UIColor(red: 27/255, green: 183/255, blue: 233/255, alpha: 1)
-        tableView.separatorInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.backgroundColor = UIColor(red: 41/255, green: 40/255, blue: 102/255, alpha: 1)
-        tableView.register(ChooseRoomCell.self, forCellReuseIdentifier: reuseIdentifier)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        return tableView
-    }()
-    
-    private lazy var backButton: UIButton = {
-        let button = UIButton()
-        button.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
-        button.setTitle("< Back", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 25)
-        button.setTitleColor(.white, for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor(red: 41/255, green: 40/255, blue: 102/255, alpha: 1)
-        setupObjects()
+        initObjectsActions()
     }
     
-    func setupObjects() {
-        [backButton, tableView].forEach { view.addSubview($0) }
-
-        backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 10, left: 20, bottom: 0, right: 0))
+    override func loadView() {
+        super.loadView()
         
-        tableView.anchor(top: backButton.bottomAnchor, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.trailingAnchor, padding:
-            .init(top: 10, left: 10, bottom: 0, right: 10))
+        view = initObjects
+    }
+    
+    func initObjectsActions() {
+        
+        initObjects.backButton.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
+        initObjects.tableView.delegate = self
+        initObjects.tableView.dataSource = self
+        initObjects.tableView.register(ChooseRoomCell.self, forCellReuseIdentifier: reuseIdentifier)
     }
     
     @objc func backButtonPressed() {
